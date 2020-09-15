@@ -1,0 +1,279 @@
+﻿@page
+@{
+    ViewData["Title"] = "schedule";
+}
+<div class="main_container">
+
+    <div class="hours">
+        <ul>
+            <li>
+                8:00
+            </li>
+            <li>
+                9:00
+            </li>
+            <li>
+                10:00
+            </li>
+            <li>
+                11:00
+            </li>
+        </ul>
+    </div>
+    <table class="shcedule_table">
+        <thead>
+            <tr>
+                <th>
+                    ראשון
+                </th>
+                <th>
+                    שני
+                </th>
+                <th>
+                    שלישי
+                </th>
+                <th>
+                    רביעי
+                </th>
+                <th>
+                    חמישי
+                </th>
+
+                <th>
+                    שישי
+                </th>
+                <th>
+                    שבת
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <div class="event">
+                        <div class="status">
+                            2 מכשירים פנויים
+                        </div>
+                        <div class="register">
+                            <button></button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    asd
+                </td>
+                <td>
+                    ads
+                </td>
+                <td>
+                    asd
+                </td>
+                <td>
+                    asd
+                </td>
+
+                <td>
+                    asd
+                </td>
+                <td>
+                    asd
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    asd
+                </td>
+                <td>
+                    asd
+                </td>
+                <td>
+                    <div class="event half_way">
+                        <div class="status">
+                            2 מכשירים פנויים
+                        </div>
+                        <div class="register">
+                            <button></button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    asd
+                </td>
+                <td>
+                    asd
+                </td>
+
+                <td>
+                    asd
+                </td>
+                <td>
+                    asd
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    asd
+                </td>
+                <td>
+                    asd
+                </td>
+                <td>
+                    ads
+                </td>
+                <td>
+                    asd
+                </td>
+                <td>
+                    asd
+                </td>
+
+                <td>
+                    <div class="event full">
+                        <div class="status">
+                            2 מכשירים פנויים
+                        </div>
+                        <div class="register">
+                            <button></button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    asd
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="event-modal" id="modal">
+    <header class="header">
+        <div class="content">
+            <span class="event-date"></span>
+            <h3 class="event-name"></h3>
+        </div>
+
+        <div class="header-bg"></div>
+    </header>
+
+    <div class="body">
+        <div class="event-info"></div>
+        <div class="body-bg"></div>
+    </div>
+
+    <a href="#0" class="close">Close</a>
+</div>
+
+<script>
+    const events = document.getElementsByClassName('event');
+    const modal = document.getElementById('modal');
+
+    for (var i = 0; i < events.length; i++) {
+        events[i].addEventListener("click", () => {
+            modal.style.display = 'block';
+
+        })
+
+    }
+</script>
+
+
+
+<style>
+    .main_container {
+        direction: rtl;
+        text-align: center;
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .hours {
+        margin-left: 30px;
+    }
+
+        .hours li:first-child {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+
+
+
+        .hours li:not(:first-child) {
+            list-style-type: none;
+            margin-top: 70px;
+        }
+
+    .shcedule_table th {
+        border-bottom: 3px solid black;
+    }
+
+    .shcedule_table td {
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+    }
+
+    .shcedule_table {
+        width: 100%;
+    }
+
+    .event {
+        height: 100%;
+        width: 100%;
+        background-color: #9ad286;
+        box-shadow: 2px 2px 2px 2px black;
+        display: flex;
+    }
+
+    .full {
+        background-color: #e46d43;
+    }
+
+    .half_way {
+        background-color: #ffd260;
+    }
+
+    .event .status {
+        width: 70%;
+    }
+
+    .event .register {
+        width: 30%;
+    }
+
+    .register button {
+        width: 30px;
+        height: 20px;
+        margin-top: 100%;
+    }
+
+</style>
+
+<style>
+    .event-modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+        .event-modal .content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+
+</style>
+
